@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorSelected">#388333</color>
+    <color name="colorUnselected">#909090</color>
+    <color name="Azul">#03738C</color>
+    <color name="verdeOscuro">#025928</color>
+    <color name="verdeClaro">#77BF63</color>
+    <color name="Amarillo">#F2B705</color>
+    <color name="Café">#A67437</color>
+    <color name="Blanco">#e2eee8</color>
+    <color name="azulito">#56989e</color>
+</resources>

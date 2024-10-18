@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#504E4E"
+        tools:context=".activities.InfoQrActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="?attr/actionBarDivider"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.DayNight" />
+
+        <ImageView
+            android:id="@+id/traerImg"
+            android:layout_width="370dp"
+            android:layout_height="255dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/traerDesc" />
+
+        <TextView
+            android:id="@+id/traerUbi"
+            android:layout_width="376dp"
+            android:layout_height="84dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="30dp"
+            android:text="Ubicación"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/traerImg"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/traerTiempo"
+            android:layout_width="366dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="30dp"
+            android:text="Tiempo"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/traerFauna"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/traerFauna"
+            android:layout_width="369dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="30dp"
+            android:text="Fauna"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/traerSendero"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/traerSendero"
+            android:layout_width="379dp"
+            android:layout_height="71dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="30dp"
+            android:text="Sendero"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/traerUbi"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/traerDesc"
+            android:layout_width="368dp"
+            android:layout_height="112dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="30dp"
+            android:text="Descripción"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
