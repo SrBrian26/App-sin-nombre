@@ -14,23 +14,35 @@
         android:theme="@style/Theme.ParquePumalinApp"
         tools:targetApi="31">
         <activity
+            android:name=".activities.AcercaDeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ConfigActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.InfoQR.InfoQrHitoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.InfoQR.InfoQrCampingActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.SplashActivity"
-            android:theme="@style/Theme.Design.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Design.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".activities.InfoQrActivity"
+            android:name=".activities.InfoQR.InfoQrSenderoActivity"
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"
             android:exported="true">
-            <!--android:theme="@style/Theme.App.SplashScreen">-->
+
+            <!-- android:theme="@style/Theme.App.SplashScreen"> -->
 
         </activity>
         <activity

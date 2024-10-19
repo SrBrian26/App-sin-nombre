@@ -3,7 +3,6 @@ package com.example.parquepumalinapp.activities
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -12,10 +11,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.parquepumalinapp.R
+import com.example.parquepumalinapp.activities.InfoQR.InfoQrCampingActivity
+import com.example.parquepumalinapp.activities.InfoQR.InfoQrHitoActivity
+import com.example.parquepumalinapp.activities.InfoQR.InfoQrSenderoActivity
 import com.example.parquepumalinapp.databinding.ActivityMainBinding
 import com.example.parquepumalinapp.dbLocal.AppDatabase
 import com.example.parquepumalinapp.dbLocal.InfoQrApp
@@ -83,25 +84,58 @@ class MainActivity : AppCompatActivity() {
                 if (!scannedContent.isNullOrEmpty()) {
                     comprobarID(scannedContent)
                 } else {
-                    Toast.makeText(this, "Código QR inválido", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Código QR inválido",
+                        Toast.LENGTH_SHORT).show()
                 }
             } else {
-                Toast.makeText(this, "Escaneo cancelado", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Escaneo cancelado",
+                    Toast.LENGTH_SHORT).show()
             }
         }
     }
     private fun comprobarID(Id: String) {
         lifecycleScope.launch {
-            val infoQr = room.InfoQrDao().getInfoQrById(Id)
+            val infoQrS = room.InfoQrDao().getQRSenderoById(Id)
+            val infoQrC = room.InfoQrDao().getQRCampById(Id)
+            val infoQrH = room.InfoQrDao().getQRHitosById(Id)
 
-            if (infoQr != null) {
-                val pantalla = Intent(this@MainActivity, InfoQrActivity::class.java)
-                val contenedorId = Bundle()
-                contenedorId.putString("IDqr", Id)
-                pantalla.putExtras(contenedorId)
-                startActivity(pantalla)
+            if (infoQrS != null || infoQrC != null || infoQrH != null) {
+                val regex = Regex("([A-Za-z])(\\w+)")
+                val matchResult = regex.matchEntire(Id)
+                if (matchResult != null) {
+                    val (codigo, fila) = matchResult.destructured
+                    when (codigo) {
+                        "S" -> {
+                            val pantalla = Intent(this@MainActivity,
+                                InfoQrSenderoActivity::class.java)
+                            val contenedorId = Bundle()
+                            contenedorId.putString("IDqr", Id)
+                            pantalla.putExtras(contenedorId)
+                            startActivity(pantalla)
+                        }
+                        "C" -> {
+                            val pantalla = Intent(this@MainActivity,
+                                InfoQrCampingActivity::class.java)
+                            val contenedorId = Bundle()
+                            contenedorId.putString("IDqr", Id)
+                            pantalla.putExtras(contenedorId)
+                            startActivity(pantalla)
+                        }
+                        "H" -> {
+                            val pantalla = Intent(this@MainActivity,
+                                InfoQrHitoActivity::class.java)
+                            val contenedorId = Bundle()
+                            contenedorId.putString("IDqr", Id)
+                            pantalla.putExtras(contenedorId)
+                            startActivity(pantalla)
+                        }
+                        else -> Toast.makeText(this@MainActivity,
+                            "Codigo QR inválido", Toast.LENGTH_SHORT).show()
+                    }
+                }
             } else {
-                Toast.makeText(this@MainActivity, "Código QR no existe", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity, "Código QR no existe",
+                    Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -118,11 +152,15 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_settings -> {
-                // Lógica para manejar la acción del ítem config
+                val pantalla = Intent(this@MainActivity,
+                    ConfigActivity::class.java)
+                startActivity(pantalla)
                 true
             }
             R.id.action_acerca_de -> {
-                // Lógica para manejar la acción del ítem acerca de
+                val pantalla = Intent(this@MainActivity,
+                    AcercaDeActivity::class.java)
+                startActivity(pantalla)
                 true
             }
             else -> super.onOptionsItemSelected(item)

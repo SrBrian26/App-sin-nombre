@@ -1,6 +1,5 @@
-package com.example.parquepumalinapp.activities
+package com.example.parquepumalinapp.activities.InfoQR
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -11,20 +10,23 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.lifecycleScope
 import com.example.parquepumalinapp.R
-import com.example.parquepumalinapp.databinding.ActivityInfoQrBinding
+import com.example.parquepumalinapp.activities.AcercaDeActivity
+import com.example.parquepumalinapp.activities.ConfigActivity
+import com.example.parquepumalinapp.activities.MainActivity
+import com.example.parquepumalinapp.databinding.ActivityInfoQrSenderoBinding
 import com.example.parquepumalinapp.dbLocal.AppDatabase
 import com.example.parquepumalinapp.dbLocal.InfoQrApp
 import kotlinx.coroutines.launch
 
-class InfoQrActivity : AppCompatActivity() {
+class InfoQrSenderoActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityInfoQrBinding
+    lateinit var binding: ActivityInfoQrSenderoBinding
     lateinit var room: AppDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityInfoQrBinding.inflate(layoutInflater)
+        binding = ActivityInfoQrSenderoBinding.inflate(layoutInflater)
         setContentView(binding.root)
         room = (application as InfoQrApp).getDatabase()
         val id_QR = intent.getStringExtra("IDqr")
@@ -32,45 +34,50 @@ class InfoQrActivity : AppCompatActivity() {
         if (id_QR != null){
             obtenerDatos(id_QR)
         } else {
-            Toast.makeText(this@InfoQrActivity, "error al escanear", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@InfoQrSenderoActivity, "error al escanear",
+                Toast.LENGTH_SHORT).show()
         }
         val toolbar = findViewById<Toolbar>(R.id.toolbar2)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
-    @SuppressLint("SetTextI18n") /*solucion temporal*/
     private fun obtenerDatos(Id: String){
         limpiarCampos()
         lifecycleScope.launch {
             try {
-                val infoQr = room.InfoQrDao().getInfoQrById(Id)
+                val infoQr = room.InfoQrDao().getQRSenderoById(Id)
 
                 if (infoQr != null) {
-                    binding.toolbar2.title = infoQr.NombreZona
-                    binding.traerDesc.text = infoQr.Descripcion
-                    binding.traerUbi.text = infoQr.Ubicacion
-                    binding.traerSendero.text = infoQr.Sendero
-                    binding.traerFauna.text = infoQr.infoFauna
+                    binding.toolbar2.title = infoQr.Nombre_Sendero
+                    binding.toolbar2.subtitle = infoQr.Sector_Sendero
+                    binding.traerDesc.text = infoQr.Descripcion_Sendero
+                    binding.traerDificultad.text = infoQr.Dificultad_Sendero
+                    binding.traerLongitud.text = infoQr.Longitud_Sendero
+                    binding.traerFlora.text = infoQr.Flora_Sendero
                     comprobarImg(Id)
                 } else {
-                    Toast.makeText(this@InfoQrActivity, "No se encontraron datos para el ID proporcionado",
-                        Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@InfoQrSenderoActivity, "No se encontraron " +
+                            "datos para el ID proporcionado", Toast.LENGTH_SHORT).show()
                 }
             } catch (e: Exception){
-                e.message
+                Toast.makeText(this@InfoQrSenderoActivity, "error: " +
+                        e.message, Toast.LENGTH_LONG).show()
             }
         }
     }
     private fun limpiarCampos(){
         binding.traerDesc.text = ""
-        binding.traerUbi.text = ""
-        binding.traerSendero.text = ""
+        binding.traerDificultad.text = ""
+        binding.traerLongitud.text = ""
         binding.traerTiempo.text = ""
-        binding.traerFauna.text = ""
+        binding.traerFlora.text = ""
     }
     private fun comprobarImg(Id: String){
         when(Id){
-            "1" -> binding.traerImg.setImageResource(R.drawable.parque)
+            "1" -> {
+                binding.traerImgPrincipal.setImageResource(R.drawable.parque)
+                binding.traerImgFlora.setImageResource(R.drawable.camping)
+            }
         }
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -80,11 +87,15 @@ class InfoQrActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_settings -> {
-                // Lógica para manejar la acción del ítem config
+                val pantalla = Intent(this@InfoQrSenderoActivity,
+                    ConfigActivity::class.java)
+                startActivity(pantalla)
                 true
             }
             R.id.action_acerca_de -> {
-                // Lógica para manejar la acción del ítem acerca de
+                val pantalla = Intent(this@InfoQrSenderoActivity,
+                    AcercaDeActivity::class.java)
+                startActivity(pantalla)
                 true
             }
             android.R.id.home -> {
