@@ -1,5 +1,6 @@
 package com.example.parquepumalinapp.activities.InfoQR
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -25,7 +26,6 @@ class InfoQrSenderoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityInfoQrSenderoBinding.inflate(layoutInflater)
         setContentView(binding.root)
         room = (application as InfoQrApp).getDatabase()
@@ -41,6 +41,7 @@ class InfoQrSenderoActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
+    @SuppressLint("SetTextI18n")
     private fun obtenerDatos(Id: String){
         limpiarCampos()
         lifecycleScope.launch {
@@ -49,11 +50,13 @@ class InfoQrSenderoActivity : AppCompatActivity() {
 
                 if (infoQr != null) {
                     binding.toolbar2.title = infoQr.Nombre_Sendero
-                    binding.toolbar2.subtitle = infoQr.Sector_Sendero
+                    binding.toolbar2.subtitle = "Sector " + infoQr.Sector_Sendero
                     binding.traerDesc.text = infoQr.Descripcion_Sendero
-                    binding.traerDificultad.text = infoQr.Dificultad_Sendero
-                    binding.traerLongitud.text = infoQr.Longitud_Sendero
+                    binding.traerDificultad.text = "Dificultad " + infoQr.Dificultad_Sendero
+                    binding.traerLongitud.text =  "Tiene una longitud de " + infoQr.Longitud_Sendero
                     binding.traerFlora.text = infoQr.Flora_Sendero
+                    binding.traerRestricciones.text = "Restricciones\n" + infoQr.Restricciones_Senderos
+                    binding.traerTiempo.text = "El sendero dura " + infoQr.Tiempo_Sendero
                     comprobarImg(Id)
                 } else {
                     Toast.makeText(this@InfoQrSenderoActivity, "No se encontraron " +
@@ -74,7 +77,7 @@ class InfoQrSenderoActivity : AppCompatActivity() {
     }
     private fun comprobarImg(Id: String){
         when(Id){
-            "1" -> {
+            "Sinterpretativo" -> {
                 binding.traerImgPrincipal.setImageResource(R.drawable.parque)
                 binding.traerImgFlora.setImageResource(R.drawable.camping)
             }

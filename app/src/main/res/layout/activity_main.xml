@@ -21,15 +21,14 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_marginTop="25dp"
-        android:background="@color/azulito"
+        android:background="@drawable/toolbar_main_activity_style"
         android:elevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.DayNight"
         app:subtitle="Parque Nacional Pumalín"
-        app:title="Mapa satelital" />
+        app:title="Mapa" />
     <com.google.android.material.bottomappbar.BottomAppBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -8,16 +8,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:background="#9B9696"
         tools:context=".activities.InfoQR.InfoQrSenderoActivity">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:background="?attr/actionBarDivider"
+            android:layout_height="70dp"
+            android:background="@drawable/michi2"
+            app:titleTextColor="@color/Blanco"
+            app:subtitleTextColor="@color/Blanco"
             android:elevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,93 +27,51 @@
 
         <ImageView
             android:id="@+id/traerImgPrincipal"
-            android:layout_width="191dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
-
-        <ImageView
-            android:id="@+id/traerImgPrincipal2"
-            android:layout_width="370dp"
+            android:layout_width="365dp"
             android:layout_height="200dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+            app:layout_constraintTop_toBottomOf="@+id/traerDesc" />
 
         <ImageView
             android:id="@+id/traerImgFlora"
-            android:layout_width="169dp"
+            android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/traerLongitud" />
+            app:layout_constraintTop_toBottomOf="@+id/traerTiempo" />
 
         <TextView
             android:id="@+id/traerDificultad"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
+            android:layout_width="365dp"
+            android:layout_height="50dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="236dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
             android:text="Dificultad"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.015"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/traerImgPrincipal"
             tools:ignore="MissingConstraints" />
 
         <TextView
             android:id="@+id/traerTiempo"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="30dp"
+            android:layout_width="365dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
             android:text="Tiempo"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.83"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/traerDificultad"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/traerFlora"
-            android:layout_width="200dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="15dp"
-            android:text="Flora"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/traerLongitud"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/traerRestricciones"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="204dp"
-            android:layout_marginEnd="15dp"
-            android:text="Restricciones"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -121,9 +80,40 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
+            android:id="@+id/traerFlora"
+            android:layout_width="205dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:text="Flora"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.903"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/traerTiempo"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/traerRestricciones"
+            android:layout_width="365dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:text="Restricciones"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/traerImgFlora"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
             android:id="@+id/traerLongitud"
-            android:layout_width="150dp"
-            android:layout_height="40dp"
+            android:layout_width="365dp"
+            android:layout_height="50dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
@@ -137,12 +127,13 @@
 
         <TextView
             android:id="@+id/traerDesc"
-            android:layout_width="180dp"
+            android:layout_width="365dp"
             android:layout_height="150dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="30dp"
             android:text="Descripción"
+            android:textAlignment="viewStart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"

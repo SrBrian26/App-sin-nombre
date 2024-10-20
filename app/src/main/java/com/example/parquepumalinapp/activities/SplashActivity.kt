@@ -3,6 +3,7 @@ package com.example.parquepumalinapp.activities
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.text.style.BackgroundColorSpan
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.parquepumalinapp.R

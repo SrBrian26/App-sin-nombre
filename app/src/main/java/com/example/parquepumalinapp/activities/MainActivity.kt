@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         room = (application as InfoQrApp).getDatabase()
@@ -46,7 +45,7 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.navigation_mapa -> {
                     replaceFragment(MapaFragment())
-                    binding.toolbar.title = "Mapa satelital"
+                    binding.toolbar.title = "Mapa"
                 }
                 R.id.navigation_parque -> {
                     replaceFragment(InfoParqueFragment())
@@ -60,7 +59,6 @@ class MainActivity : AppCompatActivity() {
         }
         binding.navigationScaner.setOnClickListener {
             initScanner()
-            binding.bottomNavigationView.selectedItemId = R.id.fab
         }
     }
     private fun initScanner() {

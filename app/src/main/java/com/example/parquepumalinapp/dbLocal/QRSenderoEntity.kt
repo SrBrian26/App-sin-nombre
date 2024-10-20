@@ -12,7 +12,7 @@ data class QRSenderoEntity(
     @ColumnInfo(name = "Descripcion_Sendero") var Descripcion_Sendero: String,
     @ColumnInfo(name = "Dificultad_Sendero") var Dificultad_Sendero: String,
     @ColumnInfo(name = "Longitud_Sendero") var Longitud_Sendero: String,
-    @ColumnInfo(name = "Tiempo_Sendero") var Tiempo_Sendero: Int,
+    @ColumnInfo(name = "Tiempo_Sendero") var Tiempo_Sendero: String,
     @ColumnInfo(name = "Restricciones_Senderos") var Restricciones_Senderos: String,
     @ColumnInfo(name = "Sector_Sendero") var Sector_Sendero: String,
     @ColumnInfo(name = "Flora_Sendero") var Flora_Sendero: String
