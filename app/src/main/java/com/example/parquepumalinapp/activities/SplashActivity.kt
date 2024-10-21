@@ -1,13 +1,14 @@
 package com.example.parquepumalinapp.activities
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.text.style.BackgroundColorSpan
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.parquepumalinapp.R
 
+@SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +22,7 @@ class SplashActivity : AppCompatActivity() {
 
             }
             override fun onFinish() {
-                val pantalla = Intent(this@SplashActivity, MainActivity::class.java)
+                val pantalla = Intent(this@SplashActivity, MenuPrincipal::class.java)
                 startActivity(pantalla)
             }
         }.start()

@@ -39,7 +39,7 @@
             android:name=".activities.InfoQR.InfoQrSenderoActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".activities.MenuPrincipal"
             android:exported="true">
 
             <!-- android:theme="@style/Theme.App.SplashScreen"> -->

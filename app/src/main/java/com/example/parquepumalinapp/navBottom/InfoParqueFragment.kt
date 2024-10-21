@@ -6,13 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.parquepumalinapp.R
+import com.example.parquepumalinapp.databinding.FragmentInfoParqueBinding
 
 class InfoParqueFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_info_parque, container, false)
+    ): View {
+        val binding = FragmentInfoParqueBinding.inflate(inflater, container, false)
+        return binding.root
     }
 }
