@@ -3,7 +3,7 @@
     <style name="Base.Theme.ParquePumalinApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/Azul</item>
-        <item name="colorPrimaryDark">@color/azulito</item>
+        <item name="colorPrimaryDark">@color/black</item>
     </style>
     <style name="Theme.ParquePumalinApp" parent="Base.Theme.ParquePumalinApp" />
     <!--<style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">

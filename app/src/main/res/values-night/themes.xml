@@ -3,6 +3,6 @@
     <style name="Base.Theme.ParquePumalinApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <item name="colorPrimary">@color/Azul</item>
-        <item name="colorPrimaryDark">@color/azulito</item>
+        <item name="colorPrimaryDark">@color/black</item>
     </style>
 </resources>

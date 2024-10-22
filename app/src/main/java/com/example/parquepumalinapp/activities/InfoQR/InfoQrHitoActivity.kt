@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.example.parquepumalinapp.R
 import com.example.parquepumalinapp.activities.MenuPrincipal
 import com.example.parquepumalinapp.databinding.ActivityInfoQrHitoBinding
 import com.example.parquepumalinapp.dbLocal.AppDatabase
@@ -18,7 +19,6 @@ class InfoQrHitoActivity : AppCompatActivity() {
     lateinit var room: AppDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityInfoQrHitoBinding.inflate(layoutInflater)
         setContentView(binding.root)
         room = (application as InfoQrApp).getDatabase()
@@ -29,13 +29,20 @@ class InfoQrHitoActivity : AppCompatActivity() {
             Toast.makeText(this@InfoQrHitoActivity, "error al escanear",
                 Toast.LENGTH_SHORT).show()
         }
+        val toolbar = binding.toolbarHito
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
     private fun obtenerDatos(Id: String) {
         lifecycleScope.launch{
             try{
                 val infoQr = room.InfoQrDao().getQRHitosById(Id)
                 if (infoQr != null){
-
+                    binding.toolbarHito.title = infoQr.Nombre_Hito
+                    binding.toolbarHito.subtitle = "Sector " + infoQr.Sector_Hito
+                    binding.traerDescHito.text = infoQr.Descripcion_Hito
+                    //binding.traerRestricciones.text = infoQr.Restricciones_Hito
+                    comprobarImg(Id)
                 } else {
                     Toast.makeText(this@InfoQrHitoActivity, "No se encontraron " +
                             "datos para el ID proporcionado", Toast.LENGTH_SHORT).show()
@@ -46,11 +53,13 @@ class InfoQrHitoActivity : AppCompatActivity() {
             }
         }
     }
-//    private fun comprobarImg(Id: String){
-//        when(Id){
-//
-//        }
-//    }
+    private fun comprobarImg(Id: String){
+        when(Id){
+            "HalerceM" -> {
+                binding.traerImgPrincipalHito.setImageResource(R.drawable.hito_alerce_img_principal)
+            }
+        }
+    }
     //    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 //        menuInflater.inflate(R.menu.tool_bar, menu)
 //        return true

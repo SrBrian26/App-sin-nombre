@@ -1,19 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/paisaje2"
     tools:context=".activities.InfoQR.InfoQrCampingActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarCamping"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/michi2"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.DayNight"
+        app:subtitleTextColor="@color/Blanco"
+        app:titleTextColor="@color/Blanco" />
+
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/DescCamping"
+        android:layout_width="377dp"
+        android:layout_height="151dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="29dp"
+        android:text="TextView"
+        android:background="#FFFFFF"
+        android:backgroundTint="#8B0F0E0E"
+        android:backgroundTintMode="multiply"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarCamping" />
+
+    <TextView
+        android:id="@+id/PrecioComunitario"
+        android:layout_width="161dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="29dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#8B0F0E0E"
+        android:backgroundTintMode="multiply"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DescCamping" />
+
+    <TextView
+        android:id="@+id/PrecioPrivado"
+        android:layout_width="161dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="208dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#8B0F0E0E"
+        android:backgroundTintMode="multiply"
+        android:layout_marginTop="28dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DescCamping" />
+
+    <TextView
+        android:id="@+id/RestriccionesCamping"
+        android:layout_width="345dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="26dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#8B0F0E0E"
+        android:backgroundTintMode="multiply"
+        android:layout_marginTop="24dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PrecioComunitario" />
+
+    <TextView
+        android:id="@+id/CapacidadCamping"
+        android:layout_width="146dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="52dp"
+        android:text="TextView"
+        android:background="#FFFFFF"
+        android:backgroundTint="#8B0F0E0E"
+        android:backgroundTintMode="multiply"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RestriccionesCamping" />
+
+    <TextView
+        android:id="@+id/SuperficieCamping"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="174dp"
-        android:layout_marginTop="359dp"
-        android:text="Camping"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="52dp"
+        android:text="Superficie"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@+id/RestriccionesCamping" />
+
+    <ImageView
+        android:id="@+id/Clagoblancoid"
+        android:layout_width="370dp"
+        android:layout_height="234dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="32dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#8B0F0E0E"
+        android:backgroundTintMode="multiply"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CapacidadCamping" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

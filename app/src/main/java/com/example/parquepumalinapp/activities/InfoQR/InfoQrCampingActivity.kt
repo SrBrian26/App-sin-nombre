@@ -1,5 +1,6 @@
 package com.example.parquepumalinapp.activities.InfoQR
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
@@ -7,6 +8,7 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.example.parquepumalinapp.R
 import com.example.parquepumalinapp.activities.MenuPrincipal
 import com.example.parquepumalinapp.databinding.ActivityInfoQrCampingBinding
 import com.example.parquepumalinapp.dbLocal.AppDatabase
@@ -18,7 +20,6 @@ class InfoQrCampingActivity : AppCompatActivity() {
     lateinit var room: AppDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityInfoQrCampingBinding.inflate(layoutInflater)
         setContentView(binding.root)
         room = (application as InfoQrApp).getDatabase()
@@ -29,13 +30,25 @@ class InfoQrCampingActivity : AppCompatActivity() {
             Toast.makeText(this@InfoQrCampingActivity, "error al escanear",
                 Toast.LENGTH_SHORT).show()
         }
+        val toolbar = binding.toolbarCamping
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
+    @SuppressLint("SetTextI18n")
     private fun obtenerDatos(Id: String) {
         lifecycleScope.launch{
             try{
                 val infoQr = room.InfoQrDao().getQRCampById(Id)
                 if (infoQr != null){
-
+                    binding.toolbarCamping.title = infoQr.Nombre_Camp
+                    binding.toolbarCamping.subtitle = "Sector" + infoQr.Sector_Camp
+                    binding.DescCamping.text = "[DESCRIPCION" + infoQr.Descripcion_Camp
+                    binding.PrecioComunitario.text = "Precio camping Comunitario" + infoQr.Precio_Comun_Camp
+                    binding.PrecioPrivado.text = "Precio camping Privado" + infoQr.Precio_Privado_Camp
+                    binding.RestriccionesCamping.text = "Restricciones: " + infoQr.Restricciones_Camp
+                    binding.CapacidadCamping.text = "Capacidad" + infoQr.Capacidad_Camp
+                    binding.SuperficieCamping.text = "Superficie del Camping" + infoQr.Superficie_Camp
+                    comprobarImg(Id)
                 } else {
                     Toast.makeText(this@InfoQrCampingActivity, "No se encontraron " +
                             "datos para el ID proporcionado", Toast.LENGTH_SHORT).show()
@@ -46,10 +59,14 @@ class InfoQrCampingActivity : AppCompatActivity() {
             }
         }
     }
-    //    private fun comprobarImg(Id: String){
-//        when(Id){
-//
-//        }
+        private fun comprobarImg(Id: String){
+        when(Id){
+            "ClagoBlanco" -> {
+                binding.Clagoblancoid.setImageResource(R.drawable.clagoblanco)
+
+            }
+        }
+    }
 //    }
     //    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
 //        menuInflater.inflate(R.menu.tool_bar, menu)
