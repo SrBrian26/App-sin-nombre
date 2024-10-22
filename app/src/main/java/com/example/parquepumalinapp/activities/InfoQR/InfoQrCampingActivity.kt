@@ -27,6 +27,7 @@ class InfoQrCampingActivity : AppCompatActivity() {
         if (id_QR != null){
             obtenerDatos(id_QR)
         } else { //HOLAAAAAAAAAAAAAAAAAAAAAA
+            //HOLAAAAAAAAAAXDDD
             Toast.makeText(this@InfoQrCampingActivity, "error al escanear",
                 Toast.LENGTH_SHORT).show()
         }
