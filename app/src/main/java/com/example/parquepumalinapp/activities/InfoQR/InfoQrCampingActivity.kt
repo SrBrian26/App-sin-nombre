@@ -26,7 +26,7 @@ class InfoQrCampingActivity : AppCompatActivity() {
         val id_QR = intent.getStringExtra("IDqr")
         if (id_QR != null){
             obtenerDatos(id_QR)
-        } else {
+        } else { //HOLAAAAAAAAAAAAAAAAAAAAAA
             Toast.makeText(this@InfoQrCampingActivity, "error al escanear",
                 Toast.LENGTH_SHORT).show()
         }
