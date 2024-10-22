@@ -55,6 +55,7 @@ class InfoQrSenderoActivity : AppCompatActivity() {
                     binding.traerRestricciones.text = "Restricciones\n" + infoQr.Restricciones_Senderos
                     binding.traerTiempo.text = "El sendero dura " + infoQr.Tiempo_Sendero
                     comprobarImg(Id) //Se envia la id a una función para saber que imagen poner por cada Sendero
+                    //prueba github xd
                 } else {
                     Toast.makeText(this@InfoQrSenderoActivity, "No se encontraron " +
                             "datos para el ID proporcionado", Toast.LENGTH_SHORT).show()
