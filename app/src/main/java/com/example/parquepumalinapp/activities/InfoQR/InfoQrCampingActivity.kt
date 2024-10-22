@@ -30,7 +30,6 @@ class InfoQrCampingActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT).show()
         }
     }
-
     private fun obtenerDatos(Id: String) {
         lifecycleScope.launch{
             try{

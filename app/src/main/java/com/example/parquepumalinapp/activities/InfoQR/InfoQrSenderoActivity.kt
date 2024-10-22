@@ -35,6 +35,7 @@ class InfoQrSenderoActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true) //Con ésta linea se muestra la flecha para volver en la toolbar
     }
+
     @SuppressLint("SetTextI18n")
     private fun obtenerDatos(Id: String){ //Función que recibe el id para encontrar los datos en la bd y traerlos a los textView
         limpiarCampos()
