@@ -29,6 +29,7 @@ class InfoQrCampingActivity : AppCompatActivity() {
         } else { //HOLAAAAAAAAAAAAAAAAAAAAAA
             //HOLAAAAAAAAAAXDDD
             // WENA CONCHATUMARE
+            //soy marcelo
             Toast.makeText(this@InfoQrCampingActivity, "error al escanear",
                 Toast.LENGTH_SHORT).show()
         }
