@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
+        android:id="@+id/mainSendero"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@drawable/paisaje2"

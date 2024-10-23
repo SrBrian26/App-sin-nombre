@@ -1,14 +1,16 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainHito"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-
-        android:id="@+id/main"
+        android:layout_height="70dp"
         android:background="@drawable/background_grande_hito"
         tools:context=".activities.InfoQR.InfoQrHitoActivity">
-
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarHito"
@@ -36,9 +38,6 @@
             android:backgroundTint="#8B0F0E0E"
             android:backgroundTintMode="multiply"/>
 
-
-
-
         <ImageView
             android:id="@+id/traerImg2Hito"
             android:layout_width="150dp"
@@ -54,7 +53,6 @@
             android:backgroundTint="#8B0F0E0E"
             android:backgroundTintMode="multiply"/>
 
-<!--
         <TextView
             android:id="@+id/traerRestricciones"
             android:layout_width="365dp"
@@ -72,7 +70,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/traerImg2Hito" />
--->
+
         <TextView
             android:id="@+id/traerDescHito"
             android:layout_width="365dp"
@@ -89,3 +87,4 @@
             app:layout_constraintTop_toBottomOf="@+id/traerImgPrincipalHito" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

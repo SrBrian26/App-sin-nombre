@@ -55,7 +55,6 @@ class InfoQrSenderoActivity : AppCompatActivity() {
                     binding.traerRestricciones.text = "Restricciones\n" + infoQr.Restricciones_Senderos
                     binding.traerTiempo.text = "El sendero dura " + infoQr.Tiempo_Sendero
                     comprobarImg(Id) //Se envia la id a una función para saber que imagen poner por cada Sendero
-                    //prueba github xd
                 } else {
                     Toast.makeText(this@InfoQrSenderoActivity, "No se encontraron " +
                             "datos para el ID proporcionado", Toast.LENGTH_SHORT).show()
@@ -81,24 +80,8 @@ class InfoQrSenderoActivity : AppCompatActivity() {
             }
         }
     }
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean { //Trae el menu de los 3 puntitos
-//        menuInflater.inflate(R.menu.tool_bar, menu)
-//        return true
-//    }
     override fun onOptionsItemSelected(item: MenuItem): Boolean { //Realiza una acción dependiendo de la opción seleccionada
         return when (item.itemId) {
-//            R.id.action_settings -> {
-//                val pantalla = Intent(this@InfoQrSenderoActivity,
-//                    ConfigActivity::class.java)
-//                startActivity(pantalla)
-//                true
-//            }
-//            R.id.action_acerca_de -> {
-//                val pantalla = Intent(this@InfoQrSenderoActivity,
-//                    AcercaDeActivity::class.java)
-//                startActivity(pantalla)
-//                true
-//            }
             android.R.id.home -> { //Al presionar la flecha volver envia al Menu ************
                 val pantalla = Intent(this, MenuPrincipal::class.java)
                 startActivity(pantalla)

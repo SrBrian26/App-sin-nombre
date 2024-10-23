@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.parquepumalinapp.R
@@ -15,34 +14,40 @@ import com.example.parquepumalinapp.dbLocal.InfoQrApp
 import kotlinx.coroutines.launch
 
 class InfoQrHitoActivity : AppCompatActivity() {
+
     lateinit var binding: ActivityInfoQrHitoBinding
     lateinit var room: AppDatabase
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityInfoQrHitoBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        room = (application as InfoQrApp).getDatabase()
-        val id_QR = intent.getStringExtra("IDqr")
-        if (id_QR != null){
-            obtenerDatos(id_QR)
+        room = (application as InfoQrApp).getDatabase() //Se obtiene la bd para el uso en la Activity
+        val id_QR = intent.getStringExtra("IDqr") //Se recibe la id del qr escaneado en el menu principal
+        if (id_QR != null){ //Se comprueba que el id recibido no sea nulo
+            obtenerDatos(id_QR) //Se envia la id a la función
         } else {
             Toast.makeText(this@InfoQrHitoActivity, "error al escanear",
                 Toast.LENGTH_SHORT).show()
         }
         val toolbar = binding.toolbarHito
         setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true) //Con ésta linea se muestra la flecha para volver en la toolbar
     }
     private fun obtenerDatos(Id: String) {
+        limpiarCampos()
         lifecycleScope.launch{
             try{
                 val infoQr = room.InfoQrDao().getQRHitosById(Id)
-                if (infoQr != null){
+                //se crea una variable para guardar todos los datos de la fila en la bd que coincida con el id recibido
+
+                if (infoQr != null){ //Se comprueba que el id exista en la tabla Hito
+                    // --> En las siguientes lineas se asignan los datos del sendero a los textView y la toolbar <--
                     binding.toolbarHito.title = infoQr.Nombre_Hito
                     binding.toolbarHito.subtitle = "Sector " + infoQr.Sector_Hito
                     binding.traerDescHito.text = infoQr.Descripcion_Hito
-                    //binding.traerRestricciones.text = infoQr.Restricciones_Hito
-                    comprobarImg(Id)
+                    binding.traerRestricciones.text = infoQr.Restricciones_Hito
+                    comprobarImg(Id) //Se envia la id a una función para saber que imagen poner por cada Sendero
                 } else {
                     Toast.makeText(this@InfoQrHitoActivity, "No se encontraron " +
                             "datos para el ID proporcionado", Toast.LENGTH_SHORT).show()
@@ -53,32 +58,22 @@ class InfoQrHitoActivity : AppCompatActivity() {
             }
         }
     }
-    private fun comprobarImg(Id: String){
+
+    private fun limpiarCampos() {
+        binding.traerDescHito.text = ""
+        binding.traerRestricciones.text = ""
+    }
+
+    private fun comprobarImg(Id: String){ //recibe la id y asigna imagenes
         when(Id){
             "HalerceM" -> {
                 binding.traerImgPrincipalHito.setImageResource(R.drawable.hito_alerce_img_principal)
             }
         }
     }
-    //    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.tool_bar, menu)
-//        return true
-//    }
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean { //Realiza una acción dependiendo de la opción seleccionada
         return when (item.itemId) {
-//            R.id.action_settings -> {
-//                val pantalla = Intent(this@InfoQrSenderoActivity,
-//                    ConfigActivity::class.java)
-//                startActivity(pantalla)
-//                true
-//            }
-//            R.id.action_acerca_de -> {
-//                val pantalla = Intent(this@InfoQrSenderoActivity,
-//                    AcercaDeActivity::class.java)
-//                startActivity(pantalla)
-//                true
-//            }
-            android.R.id.home -> {
+            android.R.id.home -> { //Al presionar la flecha volver envia al Menu ************
                 val pantalla = Intent(this, MenuPrincipal::class.java)
                 startActivity(pantalla)
                 true

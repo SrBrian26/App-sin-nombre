@@ -16,7 +16,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         splash()
     }
-    private fun splash() {
+    private fun splash() { //Falta validar que al ir hacia atrás en el menu no pueda abrir ésta activity
         object : CountDownTimer(1000,100){
             override fun onTick(p0: Long) {
 

@@ -16,15 +16,15 @@ class InfoQrApp : Application() {
         room = Room.databaseBuilder(
             applicationContext,
             AppDatabase::class.java,
-            "Pumalin_db_1.3.5.db"
-        ).createFromAsset("Pumalin_db_1.3.5.db")
+            "Pumalin_db_1.3.6.db"
+        ).createFromAsset("Pumalin_db_1.3.6.db")
             .build()
     }
     private fun copyDatabase() {
-        val dbFile = getDatabasePath("Pumalin_db_1.3.5.db")
+        val dbFile = getDatabasePath("Pumalin_db_1.3.6.db")
 
         if (!dbFile.exists()) {
-            assets.open("Pumalin_db_1.3.5.db").use { inputStream ->
+            assets.open("Pumalin_db_1.3.6.db").use { inputStream ->
                 FileOutputStream(dbFile).use { outputStream ->
                     inputStream.copyTo(outputStream)
                 }

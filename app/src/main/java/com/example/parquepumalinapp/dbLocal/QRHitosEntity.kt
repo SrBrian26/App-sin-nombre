@@ -10,5 +10,6 @@ data class QRHitosEntity(
     @ColumnInfo(name = "Id_Hito") var Id_Hito: String,
     @ColumnInfo(name = "Nombre_Hito") var Nombre_Hito: String,
     @ColumnInfo(name = "Descripcion_Hito") var Descripcion_Hito: String,
-    @ColumnInfo(name = "Sector_Hito") var Sector_Hito: String
+    @ColumnInfo(name = "Sector_Hito") var Sector_Hito: String,
+    @ColumnInfo(name = "Restricciones_Hito") var Restricciones_Hito: String
 )
