@@ -57,6 +57,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation (libs.androidx.activity.ktx)
+    implementation("com.otaliastudios:zoomlayout:1.9.0")
 
     //Room
     implementation (libs.androidx.room.runtime)

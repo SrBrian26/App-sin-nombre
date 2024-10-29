@@ -7,12 +7,40 @@
     android:background="#7C7E7C"
     tools:context=".navBottom.MapaFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Aquí el mapa"
-        android:textSize="26sp"
-        android:layout_gravity="center"
-        android:textColor="@color/black"
-        />
+    <com.otaliastudios.zoom.ZoomLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical|horizontal"
+        app:transformation="centerInside"
+        app:transformationGravity="auto"
+        app:alignment="center"
+        app:overScrollHorizontal="true"
+        app:overScrollVertical="true"
+        app:overPinchable="true"
+        app:horizontalPanEnabled="true"
+        app:verticalPanEnabled="true"
+        app:zoomEnabled="true"
+        app:flingEnabled="true"
+        app:scrollEnabled="true"
+        app:oneFingerScrollEnabled="true"
+        app:twoFingersScrollEnabled="true"
+        app:threeFingersScrollEnabled="true"
+        app:minZoom="1.7"
+        app:minZoomType="zoom"
+        app:maxZoom="100"
+        app:maxZoomType="zoom"
+        app:animationDuration="1000"
+        app:hasClickableChildren="false">
+
+        <!-- Content here. --><ImageView
+        android:id="@+id/transformableImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fondo_altares_mapamundi"
+        android:scaleType="matrix" />
+
+    </com.otaliastudios.zoom.ZoomLayout>
+
 </FrameLayout>
+
+
