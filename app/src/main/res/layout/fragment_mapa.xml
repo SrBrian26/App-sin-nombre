@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#7C7E7C"
+    android:background="@color/verdeOscuro"
     tools:context=".navBottom.MapaFragment">
 
     <com.otaliastudios.zoom.ZoomLayout
@@ -25,11 +25,11 @@
         app:oneFingerScrollEnabled="true"
         app:twoFingersScrollEnabled="true"
         app:threeFingersScrollEnabled="true"
-        app:minZoom="1.7"
+        app:minZoom="1.9"
         app:minZoomType="zoom"
         app:maxZoom="100"
         app:maxZoomType="zoom"
-        app:animationDuration="1000"
+        app:animationDuration="200"
         app:hasClickableChildren="false">
 
         <!-- Content here. --><ImageView

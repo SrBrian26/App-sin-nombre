@@ -18,7 +18,7 @@ import com.example.parquepumalinapp.activities.InfoQR.InfoQrSenderoActivity
 import com.example.parquepumalinapp.databinding.ActivityMenuPrincipalBinding
 import com.example.parquepumalinapp.dbLocal.AppDatabase
 import com.example.parquepumalinapp.dbLocal.InfoQrApp
-import com.example.parquepumalinapp.navBottom.InfoParqueFragment
+import com.example.parquepumalinapp.navBottom.InfoParque.InfoParqueFragment
 import com.example.parquepumalinapp.navBottom.MapaFragment
 import com.google.zxing.integration.android.IntentIntegrator
 import kotlinx.coroutines.launch

@@ -79,7 +79,6 @@
         android:layout_height="150dp"
         android:layout_marginTop="28dp"
         android:autoSizeTextType="none"
-        android:background="@drawable/borde_redondo"
         android:backgroundTint="#8B0F0E0E"
         android:backgroundTintMode="screen"
         android:text="DescripciónHito"
