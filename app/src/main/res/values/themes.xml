@@ -10,5 +10,15 @@
         <item name="windowSplashScreenBackground">@color/white</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/conaflogo1</item>
         <item name="postSplashScreenTheme">@style/Base.Theme.ParquePumalinApp</item>
+    </style>
+    <style name="TextoTituloToolbarNegrita" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextoSubToolbarNegrita" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item>
     </style>-->
 </resources>

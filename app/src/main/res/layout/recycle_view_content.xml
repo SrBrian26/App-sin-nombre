@@ -53,6 +53,7 @@
             android:text="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH"
             android:textAlignment="viewStart"
             android:textColor="@color/white"
+            android:justificationMode="inter_word"
             />
 
         <TextView
