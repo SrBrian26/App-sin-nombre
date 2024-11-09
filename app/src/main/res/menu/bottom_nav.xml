@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-    android:id="@+id/navigation_mapa"
-    android:icon="@drawable/ic_location_on_24"
-    android:title="@string/mapa" />
+        android:id="@+id/navigation_parque"
+        android:icon="@drawable/ic_park_24"
+        android:title="@string/info_parque" />
     <item
         android:id="@+id/fab"
         android:title=""
         android:enabled="false"/>
     <item
-        android:id="@+id/navigation_parque"
-        android:icon="@drawable/ic_park_24"
-        android:title="@string/info_parque" />
+        android:id="@+id/navigation_mapa"
+        android:icon="@drawable/hiking_icono"
+        android:title="@string/mapa" />
 </menu>

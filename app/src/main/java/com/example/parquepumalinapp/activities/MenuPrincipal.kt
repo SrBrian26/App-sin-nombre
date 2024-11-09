@@ -7,7 +7,9 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -38,7 +40,7 @@ class MenuPrincipal : AppCompatActivity() {
         val toolbar = binding.toolbar
         setSupportActionBar(toolbar)
 
-        replaceFragment(MapaFragment()) //Inicializa la App con el fragment del mapa
+        replaceFragment(InfoParqueFragment()) //Inicializa la App con el fragment del mapa
         binding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.navigation_mapa -> { //al presionar el boton del bottomNavigationView cambia al fragment del mapa
@@ -58,6 +60,19 @@ class MenuPrincipal : AppCompatActivity() {
         binding.navigationScaner.setOnClickListener { //Llama a la función initScanner cuando se presiona el boton del escaner
             initScanner()
         }
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // Muestra un diálogo de confirmación antes de salir
+                AlertDialog.Builder(this@MenuPrincipal).apply {
+                    setMessage("¿Desea salir de la aplicación?")
+                    setPositiveButton("Sí") {_,_->
+                        finishAffinity() // Finaliza todas las actividades y cierra la app
+                    }
+                    setNegativeButton("No", null) // Cierra el diálogo
+                    create().show()
+                }
+            }
+        })
     }
     private fun initScanner() { //Función para activar un lector de códigos QR
         val integrator = IntentIntegrator(this)
