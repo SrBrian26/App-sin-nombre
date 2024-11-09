@@ -1,5 +1,6 @@
 package com.example.parquepumalinapp.navBottom
 
+import android.annotation.SuppressLint
 import android.graphics.Matrix
 import android.graphics.PointF
 import android.os.Bundle
@@ -21,6 +22,7 @@ class MapaFragment : Fragment() {
     private var lastPoint = PointF()
     private var rotationAngle = 0f
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
