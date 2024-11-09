@@ -52,7 +52,7 @@ class InfoParqueFragment : Fragment() {
                 listOf(R.drawable.michi2, R.drawable.volcan_michimahuida_glaciar, R.drawable.parque, R.drawable.alerce, R.drawable.clagoblanco)
             ),
             DatosTrail(
-                "Cómo llegar",
+                "Cómo llegar por el sector Norte",
                 "Si vas a llegar en vehículo desde Puerto Montt, debes viajar 49 km por la Ruta 7 hacia el sur hasta llegar a Caleta La Arena, donde un ferry te permitirá cruzar hacia Caleta Puelche.\n" +
                         "\n" +
                         "Recorre otros 60 km hacia el sur para llegar a Hornopirén. Desde allí, deberás tomar una barcaza de las empresas Transportes Austral o Somarco para cruzar hacia Leptepu,  en un viaje que tarda cerca de 3 horas y media y que se debe coordinar previamente.\n" +
@@ -65,6 +65,10 @@ class InfoParqueFragment : Fragment() {
                         "- El horario de atención del Parque es de lunes a domingo de 08:30 a 17:30 hrs.\n" +
                         "- El ingreso al Parque y sus senderos es gratuito, se cancela solo uso de áreas de campings según la tarifa de cada temporada. Conaf administra los campings Cascada Escondida, Lago Negro, Lago Blanco, el Volcán, Grande y Ventisquero, funcionan por orden de llegada sin reserva." ,
                 listOf(R.drawable.cabanas, R.drawable.paisaje2)
+            ),DatosTrail(
+                "Cómo llegar por el sector Sur",
+                        "Si vienes desde el sur, toma la Ruta 7 y dirígete hacia el Amarillo, ubicado a unos 120 kms. de La Junta.",
+                listOf(R.drawable.amarillo)
             ),
             DatosTrail(
                 "Restricciones",
