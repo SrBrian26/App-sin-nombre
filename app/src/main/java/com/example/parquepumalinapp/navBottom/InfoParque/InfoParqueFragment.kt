@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.parquepumalinapp.R
@@ -26,8 +27,10 @@ class InfoParqueFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.tvBienvenida.typeface = ResourcesCompat.getFont(requireContext(), R.font.amoitar_regular)
 
         binding.tvDescBienvenida.text = "Los bosques profundos de Pumalín descienden hasta los fiordos, originando uno de los bordes costeros más espectaculares del planeta. Cientos de cascadas se desprenden de los ventisqueros y caen sobre las paredes de granito, mientras los volcanes Michimahuida y Chaitén coronan el paisaje. El protagonista indiscutido es el amenazado Alerce: 25% del total de las especies remanentes del país se refugian en este Parque Nacional y sus casi 3 milenios relatan la historia sin tiempo de este prístino ecosistema de las provincias de Palena y Llanquihue."
+        binding.imagenBienvenido.setImageResource(R.drawable.bienvenidaparque)
 
         val trails = listOf(
             DatosTrail(
