@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.parquepumalinapp.R
@@ -26,8 +27,10 @@ class InfoParqueFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.tvBienvenida.typeface = ResourcesCompat.getFont(requireContext(), R.font.amoitar_regular)
 
         binding.tvDescBienvenida.text = "Los bosques profundos de Pumalín descienden hasta los fiordos, originando uno de los bordes costeros más espectaculares del planeta. Cientos de cascadas se desprenden de los ventisqueros y caen sobre las paredes de granito, mientras los volcanes Michimahuida y Chaitén coronan el paisaje. El protagonista indiscutido es el amenazado Alerce: 25% del total de las especies remanentes del país se refugian en este Parque Nacional y sus casi 3 milenios relatan la historia sin tiempo de este prístino ecosistema de las provincias de Palena y Llanquihue."
+        binding.imagenBienvenido.setImageResource(R.drawable.bienvenidaparque)
 
         val trails = listOf(
             DatosTrail(
@@ -52,7 +55,7 @@ class InfoParqueFragment : Fragment() {
                 listOf(R.drawable.michi2, R.drawable.volcan_michimahuida_glaciar, R.drawable.parque, R.drawable.alerce, R.drawable.clagoblanco)
             ),
             DatosTrail(
-                "Cómo llegar",
+                "Cómo llegar por el sector Norte",
                 "Si vas a llegar en vehículo desde Puerto Montt, debes viajar 49 km por la Ruta 7 hacia el sur hasta llegar a Caleta La Arena, donde un ferry te permitirá cruzar hacia Caleta Puelche.\n" +
                         "\n" +
                         "Recorre otros 60 km hacia el sur para llegar a Hornopirén. Desde allí, deberás tomar una barcaza de las empresas Transportes Austral o Somarco para cruzar hacia Leptepu,  en un viaje que tarda cerca de 3 horas y media y que se debe coordinar previamente.\n" +
@@ -65,6 +68,10 @@ class InfoParqueFragment : Fragment() {
                         "- El horario de atención del Parque es de lunes a domingo de 08:30 a 17:30 hrs.\n" +
                         "- El ingreso al Parque y sus senderos es gratuito, se cancela solo uso de áreas de campings según la tarifa de cada temporada. Conaf administra los campings Cascada Escondida, Lago Negro, Lago Blanco, el Volcán, Grande y Ventisquero, funcionan por orden de llegada sin reserva." ,
                 listOf(R.drawable.cabanas, R.drawable.paisaje2)
+            ),DatosTrail(
+                "Cómo llegar por el sector Sur",
+                        "Si vienes desde el sur, toma la Ruta 7 y dirígete hacia el Amarillo, ubicado a unos 120 kms. de La Junta.",
+                listOf(R.drawable.amarillo)
             ),
             DatosTrail(
                 "Restricciones",
