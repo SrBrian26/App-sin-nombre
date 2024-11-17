@@ -44,7 +44,7 @@ class AdaptadorDatosTrail(private val trails: List<DatosTrail>) :
 
         holder.trailName.setTextColor(
             if (isExpanded && holder.trailName.text != "Restricciones")
-                ContextCompat.getColor(holder.itemView.context, R.color.verdeClaro)
+                ContextCompat.getColor(holder.itemView.context, R.color.colorSelected)
             else if (isExpanded && holder.trailName.text == "Restricciones")
                 ContextCompat.getColor(holder.itemView.context, R.color.Amarillo)
             else Color.WHITE

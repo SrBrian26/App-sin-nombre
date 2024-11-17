@@ -11,24 +11,24 @@
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@color/Blanco"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="@drawable/tejas2"
+        android:background="@drawable/img_toolbar_tejas_animadas"
         android:elevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:subtitle="Parque Nacional Pumalín"
-        app:titleTextColor="#EEFFFFFF"
-        app:subtitleTextColor="#EEFFFFFF"
+        app:titleTextColor="@color/white"
+        app:subtitleTextColor="@color/white"
         app:title="Conoce sobre nosotros" />
     <com.google.android.material.bottomappbar.BottomAppBar
         android:layout_width="match_parent"
@@ -39,22 +39,21 @@
         app:fabCradleMargin="10dp"
         app:fabCradleRoundedCornerRadius="50dp">
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="65dp"
             android:id="@+id/bottomNavigationView"
             android:layout_marginEnd="20dp"
             app:labelVisibilityMode="unlabeled"
             android:background="@android:color/transparent"
             app:menu="@menu/bottom_nav"
-            app:itemIconTint="@color/nav_item_color"
-            app:itemTextColor="@color/nav_item_color"/>
+            app:itemIconTint="@color/nav_item_color"/>
     </com.google.android.material.bottomappbar.BottomAppBar>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/navigation_scaner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-        android:src="@drawable/ic_qr_code_scanner_24"
+        android:src="@drawable/ic_qr_code_scanner"
         app:layout_anchor="@id/bottomAppBar"
         app:fabCustomSize="70dp"
         app:maxImageSize="40dp"

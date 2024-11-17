@@ -30,7 +30,7 @@ class InfoParqueFragment : Fragment() {
         binding.tvBienvenida.typeface = ResourcesCompat.getFont(requireContext(), R.font.amoitar_regular)
 
         binding.tvDescBienvenida.text = "Los bosques profundos de Pumalín descienden hasta los fiordos, originando uno de los bordes costeros más espectaculares del planeta. Cientos de cascadas se desprenden de los ventisqueros y caen sobre las paredes de granito, mientras los volcanes Michimahuida y Chaitén coronan el paisaje. El protagonista indiscutido es el amenazado Alerce: 25% del total de las especies remanentes del país se refugian en este Parque Nacional y sus casi 3 milenios relatan la historia sin tiempo de este prístino ecosistema de las provincias de Palena y Llanquihue."
-        binding.imagenBienvenido.setImageResource(R.drawable.bienvenidaparque)
+        binding.imagenBienvenido.setImageResource(R.drawable.img_bienvenida_parque)
 
         val trails = listOf(
             DatosTrail(
@@ -42,17 +42,17 @@ class InfoParqueFragment : Fragment() {
                         "Durante muchos años, la Fundación Tompkins Conservation- hoy Rewilding Chile– trabajó para la adquisición de territorios en la Patagonia con el sueño de donarlos al Sistema de Parques Nacionales de Chile.\n" +
                         "\n" +
                         "A pesar de las enormes controversias y suspicacias generadas por este proyecto, en el año 2018, se realizó la donación mas grande de tierras de un privado a un Estado en la historia de la humanidad, entregando 403 mil hectáreas en diversas áreas de la Patagonia. Nace así el Parque Nacional Pumalín Douglas Tompkins.\n",
-                listOf(R.drawable.camping, R.drawable.hito_alerce_img_2, R.drawable.cabanas)
+                listOf(R.drawable.img_camping, R.drawable.img_hito_alerce_2, R.drawable.img_cabanias)
             ),
             DatosTrail(
                 "Flora",
                 "Los bosques del Parque Nacional Pumalín Douglas Tompkins, presentan un alto nivel de endemismo y subespecies únicas entre las que destacan el Alerce, Luma, Tepa, Canelo, Tineo, Tiaca, Coigues, Ulmo, Olivo, Mañío, Notro, entre otros.",
-                listOf(R.drawable.michi, R.drawable.paisaje2)
+                listOf(R.drawable.img_volcan_michimahuida_lejos, R.drawable.img_fondo_principal_volcan)
             ),
             DatosTrail(
                 "Fauna",
                 "No es inusual avistar en los fiordos Toninas, Cormoranes, Pingüinos, Garzas, Martín Pescador, mientras que los bosques son el reino de aves como Chucao, Hued- Hued y Rayadito, y hábitat de mamíferos más difíciles de ver como El Pudú, Zorro, Gato Colocolo, Puma y el marsupial chileno: el monito del monte.",
-                listOf(R.drawable.michi2, R.drawable.volcan_michimahuida_glaciar, R.drawable.parque, R.drawable.alerce, R.drawable.clagoblanco)
+                listOf(R.drawable.img_hito_alerce_2, R.drawable.img_volcan_michimahuida_lejos, R.drawable.img_parque_dron, R.drawable.img_alerce_vertical, R.drawable.img_camping_lago_blanco)
             ),
             DatosTrail(
                 "Cómo llegar por el sector Norte",
@@ -67,11 +67,11 @@ class InfoParqueFragment : Fragment() {
                         "\n" +
                         "- El horario de atención del Parque es de lunes a domingo de 08:30 a 17:30 hrs.\n" +
                         "- El ingreso al Parque y sus senderos es gratuito, se cancela solo uso de áreas de campings según la tarifa de cada temporada. Conaf administra los campings Cascada Escondida, Lago Negro, Lago Blanco, el Volcán, Grande y Ventisquero, funcionan por orden de llegada sin reserva." ,
-                listOf(R.drawable.cabanas, R.drawable.paisaje2)
+                listOf(R.drawable.img_cabanias, R.drawable.img_fondo_principal_volcan)
             ),DatosTrail(
                 "Cómo llegar por el sector Sur",
                         "Si vienes desde el sur, toma la Ruta 7 y dirígete hacia el Amarillo, ubicado a unos 120 kms. de La Junta.",
-                listOf(R.drawable.amarillo)
+                listOf(R.drawable.img_entrada_el_amarillo)
             ),
             DatosTrail(
                 "Restricciones",
@@ -79,7 +79,9 @@ class InfoParqueFragment : Fragment() {
                         "-Llevar su basura\t\n" +
                         "-No cazar\n" +
                         "-No recolectar especies florales",
-                listOf())
+                listOf()
+            )
+            //Instructivo de como usar la app?????????
         )
 
         val adapter = AdaptadorDatosTrail(trails)

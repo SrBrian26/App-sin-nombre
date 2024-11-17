@@ -52,10 +52,9 @@ class InfoQrSenderoActivity : AppCompatActivity() {
                     binding.traerDificultad.text = "Dificultad: " + infoQr.Dificultad_Sendero
                     binding.traerLongitud.text =  "Tiene una longitud de " + infoQr.Longitud_Sendero
                     binding.traerFlora.text = infoQr.Flora_Sendero
-                    binding.traerRestricciones.text = "Restricciones\n" + infoQr.Restricciones_Senderos
+                    binding.traerRestricciones.text = "Restricciones:\n\n" + infoQr.Restricciones_Senderos
                     binding.traerTiempo.text = "El sendero dura " + infoQr.Tiempo_Sendero
                     comprobarImg(Id) //Se envia la id a una función para saber que imagen poner por cada Sendero
-                    //prueba github xd
                 } else {
                     Toast.makeText(this@InfoQrSenderoActivity, "No se encontraron " +
                             "datos para el ID proporcionado", Toast.LENGTH_SHORT).show()
@@ -75,9 +74,9 @@ class InfoQrSenderoActivity : AppCompatActivity() {
     }
     private fun comprobarImg(Id: String){ //recibe la id y asigna imagenes
         when(Id){
-            "Sinterpretativo" -> {
-                binding.traerImgPrincipal.setImageResource(R.drawable.parque)
-                binding.traerImgFlora.setImageResource(R.drawable.camping)
+            "Salerce" -> {
+                binding.traerImgPrincipal.setImageResource(R.drawable.img_sendero_alere)
+                binding.traerImgFlora.setImageResource(R.drawable.img_flora_alerce)
             }
         }
     }

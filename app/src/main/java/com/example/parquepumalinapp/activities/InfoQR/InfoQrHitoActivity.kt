@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.parquepumalinapp.R
@@ -56,7 +55,8 @@ class InfoQrHitoActivity : AppCompatActivity() {
     private fun comprobarImg(Id: String){
         when(Id){
             "HalerceM" -> {
-                binding.traerImgPrincipalHito.setImageResource(R.drawable.hito_alerce_img_principal)
+                binding.traerImgPrincipalHito.setImageResource(R.drawable.img_hito_alerce_principal)
+                binding.traerImg2Hito.setImageResource(R.drawable.img_hito_alerce_2)
             }
         }
     }

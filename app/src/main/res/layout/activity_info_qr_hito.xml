@@ -1,93 +1,70 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
-
-
     android:layout_height="match_parent"
-    android:background="@drawable/background_grande_hito"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/img_fondo_hito"
     tools:context=".activities.InfoQR.InfoQrHitoActivity">
-
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarHito"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="@drawable/background_info_hito"
+        android:background="@drawable/img_toolbar_tejas_animadas"
+        app:titleTextColor="@color/white"
+        app:subtitleTextColor="@color/white"
         android:elevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.DayNight"
-        app:subtitleTextColor="#070707"
-        app:titleTextColor="#EE000000" />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.DayNight" />
 
-
-    <ImageView
-        android:id="@+id/traerImgPrincipalHito"
-        android:layout_width="365dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="52dp"
-        android:background="@drawable/borde_redondo"
-        android:backgroundTint="#8B0F0E0E"
-        android:backgroundTintMode="multiply"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarHito" />
-
-    <ImageView
-        android:id="@+id/traerImg2Hito"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="15dp"
-        android:background="@drawable/borde_redondo"
-        android:backgroundTint="#8B0F0E0E"
-        android:backgroundTintMode="multiply"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/traerDescHito" />
-
-    <!--
-        <TextView
-            android:id="@+id/traerRestricciones"
-            android:layout_width="365dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="15dp"
-            android:text="Restricciones"
-            android:background="#FFFFFF"
-            android:textColor="#EDE5E5"
-            android:backgroundTint="#8B0F0E0E"
-            android:backgroundTintMode="multiply"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/traerImg2Hito" />
--->
-    <TextView
-        android:id="@+id/traerDescHito"
-        android:layout_width="365dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="28dp"
-        android:autoSizeTextType="none"
-        android:background="@drawable/borde_redondo"
-        android:backgroundTint="#8B0F0E0E"
-        android:backgroundTintMode="screen"
-        android:text="DescripciónHito"
-
-        android:textAlignment="viewStart"
-        android:textColor="#EDE5E5"
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/traerImgPrincipalHito" />
+        app:layout_constraintTop_toBottomOf="@id/toolbarHito">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/st_borde_cafe_redondo"
+            android:backgroundTintMode="screen"
+            android:orientation="vertical"
+            android:padding="16dp">
 
+            <ImageView
+                android:id="@+id/traerImgPrincipalHito"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/st_borde_cafe_redondo"
+                android:backgroundTintMode="screen" />
 
+            <TextView
+                android:id="@+id/traerDescHito"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/st_borde_verde_redondo"
+                android:backgroundTintMode="screen"
+                android:text="Descripción Hito"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/traerImg2Hito"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/st_borde_cafe_redondo"
+                android:backgroundTintMode="screen" />
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

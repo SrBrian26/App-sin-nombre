@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.parquepumalinapp.R
@@ -41,13 +40,13 @@ class InfoQrCampingActivity : AppCompatActivity() {
                 val infoQr = room.InfoQrDao().getQRCampById(Id)
                 if (infoQr != null){
                     binding.toolbarCamping.title = infoQr.Nombre_Camp
-                    binding.toolbarCamping.subtitle = "Sector" + infoQr.Sector_Camp
-                    binding.DescCamping.text = "[DESCRIPCION" + infoQr.Descripcion_Camp
-                    binding.PrecioComunitario.text = "Precio camping Comunitario" + infoQr.Precio_Comun_Camp
-                    binding.PrecioPrivado.text = "Precio camping Privado" + infoQr.Precio_Privado_Camp
-                    binding.RestriccionesCamping.text = "Restricciones: " + infoQr.Restricciones_Camp
-                    binding.CapacidadCamping.text = "Capacidad" + infoQr.Capacidad_Camp
-                    binding.SuperficieCamping.text = "Superficie del Camping" + infoQr.Superficie_Camp
+                    binding.toolbarCamping.subtitle = "Sector " + infoQr.Sector_Camp
+                    binding.DescCamping.text = infoQr.Descripcion_Camp
+                    binding.PrecioComunitario.text = "Precio Comunitario: $" + infoQr.Precio_Comun_Camp
+                    binding.PrecioPrivado.text = "Precio Privado: $" + infoQr.Precio_Privado_Camp
+                    binding.RestriccionesCamping.text = "Restricciones:\n\n" + infoQr.Restricciones_Camp
+                    binding.CapacidadCamping.text = "Capacidad: " + infoQr.Capacidad_Camp
+                    binding.SuperficieCamping.text = "Superficie del Camping: " + infoQr.Superficie_Camp
                     comprobarImg(Id)
                 } else {
                     Toast.makeText(this@InfoQrCampingActivity, "No se encontraron " +
@@ -62,7 +61,7 @@ class InfoQrCampingActivity : AppCompatActivity() {
         private fun comprobarImg(Id: String){
         when(Id){
             "ClagoBlanco" -> {
-                binding.Clagoblancoid.setImageResource(R.drawable.clagoblanco)
+                binding.Clagoblancoid.setImageResource(R.drawable.img_camping_lago_blanco)
 
             }
         }

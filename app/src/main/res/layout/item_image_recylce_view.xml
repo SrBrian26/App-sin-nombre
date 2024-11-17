@@ -9,5 +9,5 @@
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:scaleType="centerInside"
-        android:src="@drawable/clagoblanco" />
+        android:src="@drawable/img_camping_lago_blanco" />
 </FrameLayout>

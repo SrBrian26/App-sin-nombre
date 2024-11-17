@@ -40,7 +40,7 @@ class MenuPrincipal : AppCompatActivity() {
         val toolbar = binding.toolbar
         setSupportActionBar(toolbar)
 
-        replaceFragment(InfoParqueFragment()) //Inicializa la App con el fragment del mapa
+        replaceFragment(InfoParqueFragment()) //Inicializa la App con el fragment de bienvenida
         binding.bottomNavigationView.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.navigation_mapa -> { //al presionar el boton del bottomNavigationView cambia al fragment del mapa
@@ -158,10 +158,10 @@ class MenuPrincipal : AppCompatActivity() {
         fragmentTransaction.replace(R.id.frame_layout, fragment)
         fragmentTransaction.commit()
     }
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean { //Trae el menu de los 3 puntitos
+    /*override fun onCreateOptionsMenu(menu: Menu?): Boolean { //Trae el menu de los 3 puntitos
         menuInflater.inflate(R.menu.tool_bar, menu)
         return true
-    }
+    }*/
     override fun onOptionsItemSelected(item: MenuItem): Boolean { //Realiza una acción dependiendo de la opción seleccionada
         return when (item.itemId) {
             R.id.action_settings -> {

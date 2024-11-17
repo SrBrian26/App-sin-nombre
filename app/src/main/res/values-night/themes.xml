@@ -2,7 +2,23 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.ParquePumalinApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <item name="colorPrimary">@color/verdeOscuro</item>
+        <item name="colorPrimary">@color/Azul</item>
         <item name="colorPrimaryDark">@color/black</item>
+    </style>
+    <style name="Theme.ParquePumalinApp" parent="Base.Theme.ParquePumalinApp" />
+    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/img_logo_conaf</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.ParquePumalinApp</item>
+    </style>
+    <style name="TextoTituloToolbarNegrita" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextoSubToolbarNegrita" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>

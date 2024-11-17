@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/michi"
+    android:background="@drawable/img_volcan_michimahuida_lejos"
     tools:context=".activities.SplashActivity">
 
     <LinearLayout
@@ -17,7 +17,7 @@
         <ImageView
             android:layout_width="250dp"
             android:layout_height="250dp"
-            android:src="@drawable/conaflogo1"
+            android:src="@drawable/img_logo_conaf"
             />
 
         <TextView

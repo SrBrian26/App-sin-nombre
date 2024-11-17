@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/verdeOscuro"
+    android:background="@color/celeste"
     tools:context=".navBottom.MapaFragment">
 
     <com.otaliastudios.zoom.ZoomLayout
@@ -25,18 +25,18 @@
         app:oneFingerScrollEnabled="true"
         app:twoFingersScrollEnabled="true"
         app:threeFingersScrollEnabled="true"
-        app:minZoom="1.9"
+        app:minZoom="1.27"
         app:minZoomType="zoom"
         app:maxZoom="100"
         app:maxZoomType="zoom"
         app:animationDuration="200"
-        app:hasClickableChildren="false">
+        app:hasClickableChildren="true">
 
         <!-- Content here. --><ImageView
         android:id="@+id/transformableImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/fondo_altares_mapamundi"
+        android:src="@drawable/img_mapa_rutero_recortado"
         android:scaleType="matrix" />
 
     </com.otaliastudios.zoom.ZoomLayout>
