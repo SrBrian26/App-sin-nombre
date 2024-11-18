@@ -8,6 +8,7 @@
     tools:context=".navBottom.MapaFragment">
 
     <com.otaliastudios.zoom.ZoomLayout
+        android:id="@+id/zoomLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical|horizontal"
@@ -32,15 +33,13 @@
         app:animationDuration="200"
         app:hasClickableChildren="true">
 
-        <!-- Content here. --><ImageView
-        android:id="@+id/transformableImageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/img_mapa_rutero_recortado"
-        android:scaleType="matrix" />
-
+        <ImageView
+            android:id="@+id/transformableImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_mapa_rutero_recortado"
+            android:scaleType="centerInside" />
     </com.otaliastudios.zoom.ZoomLayout>
-
 </FrameLayout>
 
 

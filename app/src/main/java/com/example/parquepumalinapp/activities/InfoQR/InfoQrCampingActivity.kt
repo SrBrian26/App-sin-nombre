@@ -45,7 +45,7 @@ class InfoQrCampingActivity : AppCompatActivity() {
                     binding.PrecioComunitario.text = "Precio Comunitario: $" + infoQr.Precio_Comun_Camp
                     binding.PrecioPrivado.text = "Precio Privado: $" + infoQr.Precio_Privado_Camp
                     binding.RestriccionesCamping.text = "Restricciones:\n\n" + infoQr.Restricciones_Camp
-                    binding.CapacidadCamping.text = "Capacidad: " + infoQr.Capacidad_Camp
+                    binding.CapacidadCamping.text = "Capacidad: " + infoQr.Capacidad_Camp + " personas"
                     binding.SuperficieCamping.text = "Superficie del Camping: " + infoQr.Superficie_Camp
                     comprobarImg(Id)
                 } else {

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">PumApplin</string>
     <string name="mapa">Mapa</string>
+    <string name="sobre_el_parque">Sobre el parque</string>
 </resources>

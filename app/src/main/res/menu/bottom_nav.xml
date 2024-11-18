@@ -5,7 +5,7 @@
     <item
         android:id="@+id/navigation_parque"
         android:icon="@drawable/ic_park"
-        android:title="Sobre el parque" />
+        android:title="@string/sobre_el_parque" />
     <item
         android:id="@+id/fab"
         android:title=""

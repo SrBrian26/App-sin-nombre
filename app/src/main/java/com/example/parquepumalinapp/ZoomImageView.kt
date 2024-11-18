@@ -37,7 +37,6 @@ class ZoomImageView @JvmOverloads constructor(
                 }
             })
         }
-
         override fun onTouchEvent(event: MotionEvent): Boolean {
             scaleDetector.onTouchEvent(event)
 
