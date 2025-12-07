@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/celeste"
+    android:background="@color/Azul2"
     tools:context=".navBottom.MapaFragment">
 
     <com.otaliastudios.zoom.ZoomLayout
@@ -26,7 +26,7 @@
         app:oneFingerScrollEnabled="true"
         app:twoFingersScrollEnabled="true"
         app:threeFingersScrollEnabled="true"
-        app:minZoom="1.27"
+        app:minZoom="1.45"
         app:minZoomType="zoom"
         app:maxZoom="100"
         app:maxZoomType="zoom"
@@ -37,7 +37,7 @@
             android:id="@+id/transformableImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/img_mapa_rutero_recortado"
+            android:src="@drawable/img_mapa_god"
             android:scaleType="centerInside" />
     </com.otaliastudios.zoom.ZoomLayout>
 </FrameLayout>
